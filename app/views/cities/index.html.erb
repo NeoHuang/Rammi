@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+						<th>ID</th>
       <th>Name</th>
       <th>Parent</th>
       <th>Coordinate</th>
@@ -15,6 +16,8 @@
   <tbody>
     <% @cities.each do |city| %>
       <tr>
+							
+        <td><%= city.id%></td>
         <td><%= city.name %></td>
         <td><%= city.parent_id %></td>
         <td><%= city.coordinate %></td>

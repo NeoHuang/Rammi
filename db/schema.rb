@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20131016150544) do
   create_table "dishes", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "restaurant_id_id"
+    t.integer  "restaurant_id"
     t.boolean  "is_vegi"
     t.decimal  "price"
     t.boolean  "is_msg_free"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20131016150544) do
     t.datetime "updated_at"
   end
 
-  add_index "dishes", ["restaurant_id_id"], name: "index_dishes_on_restaurant_id_id"
+  add_index "dishes", ["restaurant_id"], name: "index_dishes_on_restaurant_id"
 
   create_table "restaurants", force: true do |t|
     t.string   "name"

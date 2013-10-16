@@ -3,7 +3,7 @@ class CreateDishes < ActiveRecord::Migration
     create_table :dishes do |t|
       t.string :name
       t.text :description
-      t.references :restaurant_id, index: true
+      t.references :restaurant, index: true
       t.boolean :is_vegi
       t.decimal :price
       t.boolean :is_msg_free
