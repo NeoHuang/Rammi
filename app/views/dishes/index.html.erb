@@ -1,0 +1,41 @@
+<h1>Listing dishes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Restaurant</th>
+      <th>Is vegi</th>
+      <th>Price</th>
+      <th>Is msg free</th>
+      <th>Ingredient</th>
+      <th>Meta</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dishes.each do |dish| %>
+      <tr>
+        <td><%= dish.name %></td>
+        <td><%= dish.description %></td>
+        <td><%= dish.restaurant_id %></td>
+        <td><%= dish.is_vegi %></td>
+        <td><%= dish.price %></td>
+        <td><%= dish.is_msg_free %></td>
+        <td><%= dish.ingredient %></td>
+        <td><%= dish.meta %></td>
+        <td><%= link_to 'Show', dish %></td>
+        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
+        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dish', new_dish_path %>

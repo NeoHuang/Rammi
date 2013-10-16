@@ -11,13 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131001155554) do
+ActiveRecord::Schema.define(version: 20131016150544) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
+    t.integer  "parent_id"
+    t.string   "coordinate"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "parent_id"
   end
+
+  create_table "dishes", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "restaurant_id_id"
+    t.boolean  "is_vegi"
+    t.decimal  "price"
+    t.boolean  "is_msg_free"
+    t.text     "ingredient"
+    t.text     "meta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dishes", ["restaurant_id_id"], name: "index_dishes_on_restaurant_id_id"
+
+  create_table "restaurants", force: true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "city_id"
+    t.string   "street"
+    t.string   "coordinate"
+    t.string   "zip_code"
+    t.string   "phone"
+    t.string   "website"
+    t.text     "description"
+    t.text     "extra"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "restaurants", ["city_id"], name: "index_restaurants_on_city_id"
 
 end
