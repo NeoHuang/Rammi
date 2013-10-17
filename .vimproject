@@ -1,0 +1,275 @@
+
+Rammi=/home/zhiyi/railsDir/Rammi {
+ Gemfile
+ Gemfile.lock
+ README.md
+ README.rdoc
+ Rakefile
+ config.ru
+ app=app {
+  assets=assets {
+   images=images {
+   }
+   javascripts=javascripts {
+    application.js
+    bootstrap.min.js
+    cities.js.coffee
+    dishes.js.coffee
+    login.js.coffee
+    restaurants.js.coffee
+    welcome.js.coffee
+   }
+   stylesheets=stylesheets {
+    application.css
+    bootstrap-theme.min.css
+    bootstrap.min.css
+    cities.css.scss
+    dishes.css.scss
+    login.css.scss
+    restaurants.css.scss
+    scaffolds.css.scss
+    welcome.css.scss
+   }
+  }
+  controllers=controllers {
+   application_controller.rb
+   cities_controller.rb
+   dishes_controller.rb
+   login_controller.rb
+   restaurants_controller.rb
+   welcome_controller.rb
+   concerns=concerns {
+   }
+  }
+  helpers=helpers {
+   application_helper.rb
+   cities_helper.rb
+   dishes_helper.rb
+   login_helper.rb
+   restaurants_helper.rb
+   welcome_helper.rb
+  }
+  mailers=mailers {
+  }
+  models=models {
+   city.rb
+   dish.rb
+   restaurant.rb
+   concerns=concerns {
+   }
+  }
+  views=views {
+   cities=cities {
+    _form.html.erb
+    edit.html.erb
+    index.html.erb
+    index.json.jbuilder
+    new.html.erb
+    show.html.erb
+    show.json.jbuilder
+   }
+   dishes=dishes {
+    _form.html.erb
+    edit.html.erb
+    index.html.erb
+    index.json.jbuilder
+    new.html.erb
+    show.html.erb
+    show.json.jbuilder
+   }
+   layouts=layouts {
+    application.html.erb
+   }
+   restaurants=restaurants {
+    _form.html.erb
+    edit.html.erb
+    index.html.erb
+    index.json.jbuilder
+    new.html.erb
+    show.html.erb
+    show.json.jbuilder
+   }
+   welcome=welcome {
+    index.html.erb
+   }
+  }
+ }
+ bin=bin {
+  bundle
+  rails
+  rake
+ }
+ config=config {
+  application.rb
+  boot.rb
+  database.yml
+  environment.rb
+  routes.rb
+  environments=environments {
+   development.rb
+   production.rb
+   test.rb
+  }
+  initializers=initializers {
+   backtrace_silencers.rb
+   filter_parameter_logging.rb
+   inflections.rb
+   mime_types.rb
+   secret_token.rb
+   session_store.rb
+   wrap_parameters.rb
+  }
+  locales=locales {
+   en.yml
+  }
+ }
+ db=db {
+  development.sqlite3
+  schema.rb
+  seeds.rb
+  migrate=migrate {
+   20131016144418_create_cities.rb
+   20131016145402_create_restaurants.rb
+   20131016150544_create_dishes.rb
+  }
+ }
+ lib=lib {
+  assets=assets {
+  }
+  tasks=tasks {
+  }
+ }
+ log=log {
+  development.log
+ }
+ public=public {
+  404.html
+  422.html
+  500.html
+  favicon.ico
+  robots.txt
+ }
+ test=test {
+  test_helper.rb
+  controllers=controllers {
+   cities_controller_test.rb
+   dishes_controller_test.rb
+   login_controller_test.rb
+   restaurants_controller_test.rb
+   welcome_controller_test.rb
+  }
+  fixtures=fixtures {
+   cities.yml
+   dishes.yml
+   restaurants.yml
+  }
+  helpers=helpers {
+   cities_helper_test.rb
+   dishes_helper_test.rb
+   login_helper_test.rb
+   restaurants_helper_test.rb
+   welcome_helper_test.rb
+  }
+  integration=integration {
+  }
+  mailers=mailers {
+  }
+  models=models {
+   city_test.rb
+   dish_test.rb
+   restaurant_test.rb
+  }
+ }
+ tmp=tmp {
+  cache=cache {
+   assets=assets {
+    development=development {
+     sass=sass {
+      fe70168bc769e47363fb79d1039aebfe389e4f22=fe70168bc769e47363fb79d1039aebfe389e4f22 {
+       cities.css.scssc
+       dishes.css.scssc
+       login.css.scssc
+       restaurants.css.scssc
+       scaffolds.css.scssc
+       welcome.css.scssc
+      }
+     }
+     sprockets=sprockets {
+      07418ab9f19996d5242a77ee88b6066c
+      0880abdae953b5df184845d8ab6f2944
+      1018bfd249acdbae1df14a09fb45c8df
+      10fcfbe6ebae11a40c8eac41939a1b9a
+      13cddf662dd2fd60639b8b35e9fdb8ab
+      13fe41fee1fe35b49d145bcc06610705
+      1b5189a8894b07534e88879bf540e9d7
+      202afaa9b08e2fa81f09a086ce04e5c2
+      2211190fb757d05874e2b25fc37a31ad
+      2757fae967a52701ef3724ae5a76c4a8
+      2f2229c70dcf195564d4d0fd6a12ac1a
+      2f5173deea6c795b8fdde723bb4b63af
+      3233432f81669b9bd10ef726c526d348
+      357970feca3ac29060c1e3861e2c0953
+      35cf16f774880021ae6eaac72c949fe0
+      4bf1ae5d2f8fa8cc344e0a31079428ef
+      4daff1d5b8e6da6d2ed55886db193ef2
+      4ea33e825e6e38bd22dccab488a0255b
+      50fdd410daa6f48a128ab73c37954a6d
+      52f1381f018c9b4618a7c18578efa49b
+      589a6c37a91a4df725be5f9edc4088b4
+      5bf1de9c32959370c282e727d1c7fdb3
+      667cc9143034d978037aa947e795429a
+      67fc0b5e8ca98f7dcc2b7132f7e16c97
+      7aeaea268eda9e3fa6eee8b9489a1358
+      7be9086c960bb4384c9d23a52e489f29
+      86f909bf5baee50515afadaa3ce2df8f
+      8a52e446ba8c876915d0e8698b0dbcc1
+      8e5a9738e9bc15478e026d98335454f9
+      8f8936f164170e095c5ca2d0c2ae6127
+      93708cb34051f3000884905e8669d74a
+      9b7a43e5ea18a62cfde4e8d49c7af7b8
+      a995a3b95e4a7b0e5b9fa7c49efd6b74
+      aaf3adeb8254396f969d99455f7f4511
+      b02fbe6c41cf237d06152d09b4ba21e3
+      b10c317a811524e51f4bf3df4f40c6ca
+      b256ca2b35981908e0e0a93a3ce91359
+      b847986ef8fca90b0924f5a0d9368825
+      bd3936370d0f952ada5774e2230046ed
+      bd71546009ab5e606b3f27b4c6a79856
+      c30a6d3b62f806e0185173f247952ba8
+      cdeeaff308779e7f38378d947c35865c
+      cffd775d018f68ce5dba1ee0d951a994
+      d2be27ffc343a357643dd252d7379efb
+      d3b6d377f13c943854735210cd77b3cd
+      d66161db0bd0b1862b1cc723af49eb1a
+      d771ace226fc8215a3572e0aa35bb0d6
+      e459168835a5f27b832ace20874f7c10
+      e48e6f6c8d88ed0189f92dbdd2fca08f
+      e93d66a9a87bbc05b41e2effc31fdd0b
+      ed0062603f7cf4108533489bc278429e
+      edc53c9a6c1964fb3bf97c134a3e2d19
+      efe9f721c2a829d12449c0e9e5139b2c
+      f644fd75cbead0e58c847aa16546e2a8
+      f7a0b90045f0637e5fb277fb03334778
+      f7cbd26ba1d28d48de824f0e94586655
+      ffd7643b7c429e23bdb2281097a5e096
+     }
+    }
+   }
+  }
+  pids=pids {
+   server.pid
+  }
+  sessions=sessions {
+  }
+  sockets=sockets {
+  }
+ }
+ vendor=vendor {
+  assets=assets {
+   javascripts=javascripts {
+   }
+   stylesheets=stylesheets {
+   }
+  }
+ }
+}
