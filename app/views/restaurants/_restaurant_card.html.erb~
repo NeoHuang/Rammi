@@ -1,4 +1,4 @@
-<div class="restaurant">
+<div class="restaurant-list">
         <a href='<%=restaurant_path(restaurant) %>' class="detail"> 
           <div class="absolute rst-thumbnail">
             <img class="thumbnail-img" src="/assets/restaurant-icon.gif"></img>
@@ -11,7 +11,7 @@
             <span class="lr-location" > <%= restaurant.phone%></span>
 						<br />
 									<% restaurant.restaurant_categories.each do |category| %>
-						<span class="lr-location"><%= category.name %></span>
+													<span class="lr-location"><%= category.name %></span>
 									<% end %>
           </div>
           <div class="rating">

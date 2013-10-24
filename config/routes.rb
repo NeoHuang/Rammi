@@ -1,4 +1,6 @@
 Yammi::Application.routes.draw do
+  resources :restaurant_categories
+
   resources :dishes
 
   resources :restaurants
