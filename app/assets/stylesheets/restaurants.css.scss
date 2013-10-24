@@ -1,7 +1,7 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.restaurant-list{
+.restaurant{
   box-shadow: 2px 2px 3px rgb(238, 238, 238);
   border: 1px solid rgb(223, 223, 223);
   height: 140px !important;
@@ -10,10 +10,10 @@
   transition: all 0.2s linear 0s;
   position: relative;
 }
-.restaurant-list:hover {
+.restaurant:hover {
   box-shadow: 2px 2px 5px rgb(153, 153, 153);
 }
-.restaurant-list a.detail {
+.restaurant a.detail {
 
   text-decoration: none;
   width: 708px;

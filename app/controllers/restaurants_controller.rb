@@ -4,8 +4,21 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+      #@restaurants = Restaurant.all
+      #@restaurants = Restaurant.limit(10)
+      #@restaurants = Kaminari.paginate_array(Restaurant.all).page(params[:page]).per(10)
+      #@products = Restaurant.paginate(:page => params[:page], :per_page => 15)
+      @restaurants = Restaurant.order(:id).page(params[:page]).per(10)
   end
+    
+    def load_from
+        @start_point = params[:start]
+        @start_point = @start_point.to_i -1
+        @new_posts = Restaurant.where('id < ?', @start_point).limit(10)
+        respond_to do |format|
+            format.js
+        end
+    end
 
   # GET /restaurants/1
   # GET /restaurants/1.json

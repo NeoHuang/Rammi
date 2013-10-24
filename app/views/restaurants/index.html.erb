@@ -1,15 +1,32 @@
-<div class="container">
+<div id="restaurants">
 
-  <ol class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li class="active">Restaurants</li>
-  </ol>
-  <div>
+  <div class="page">
     <% @restaurants.each do |restaurant| %>
-      <%= render 'restaurant_card', :restaurant => restaurant %>
+      <div class="restaurant">
+        <a href='<%=restaurant_path(restaurant) %>' class="detail"> 
+          <div class="absolute rst-thumbnail">
+            <img class="thumbnail-img" src="/assets/restaurant-icon.gif"></img>
+          </div>
+
+          <div class="absolute restaurant-container">
+            <h2 class="restaurant-title"><%= restaurant.name %></h2>
+            <span class="lr-location" > <%= restaurant.city.name + ", " + restaurant.zip_code + ", " + restaurant.street %></span>
+            <br />
+            <span class="lr-location" > <%= restaurant.phone%></span>
+          </div>
+          <div class="rating">
+            <img src="/assets/rating_5.png" />
+          </div>
+        </a> 
+      </div>
           <% end %>
   </div>
   <br>
 
-  <%= link_to 'New Restaurant', new_restaurant_path %>
 </div>
+
+  <%= link_to 'New Restaurant', new_restaurant_path %>
+  
+  <%= paginate @restaurants %>
+
+
