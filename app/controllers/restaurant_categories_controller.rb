@@ -1,5 +1,5 @@
 class RestaurantCategoriesController < ApplicationController
-  before_action :set_restaurant_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_restaurant_category, only: [ :edit, :update, :destroy]
 
   # GET /restaurant_categories
   # GET /restaurant_categories.json
@@ -10,6 +10,13 @@ class RestaurantCategoriesController < ApplicationController
   # GET /restaurant_categories/1
   # GET /restaurant_categories/1.json
   def show
+      @restaurant_category = RestaurantCategory.find_by_id params[:id]
+      if (@restaurant_category != nil)
+        @restaurants = @restaurant_category.restaurants;
+      else
+        redirect_to restaurant_categories_path
+      end
+
   end
 
   # GET /restaurant_categories/new

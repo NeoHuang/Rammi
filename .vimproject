@@ -9,6 +9,8 @@ Rammi=/home/zhiyi/railsDir/Rammi {
  app=app {
   assets=assets {
    images=images {
+    rating_5.png
+    restaurant-icon.gif
    }
    javascripts=javascripts {
     application.js
@@ -16,6 +18,7 @@ Rammi=/home/zhiyi/railsDir/Rammi {
     cities.js.coffee
     dishes.js.coffee
     login.js.coffee
+    restaurant_categories.js.coffee
     restaurants.js.coffee
     welcome.js.coffee
    }
@@ -26,6 +29,7 @@ Rammi=/home/zhiyi/railsDir/Rammi {
     cities.css.scss
     dishes.css.scss
     login.css.scss
+    restaurant_categories.css.scss
     restaurants.css.scss
     scaffolds.css.scss
     welcome.css.scss
@@ -35,7 +39,9 @@ Rammi=/home/zhiyi/railsDir/Rammi {
    application_controller.rb
    cities_controller.rb
    dishes_controller.rb
+   import_controller.rb
    login_controller.rb
+   restaurant_categories_controller.rb
    restaurants_controller.rb
    welcome_controller.rb
    concerns=concerns {
@@ -46,6 +52,7 @@ Rammi=/home/zhiyi/railsDir/Rammi {
    cities_helper.rb
    dishes_helper.rb
    login_helper.rb
+   restaurant_categories_helper.rb
    restaurants_helper.rb
    welcome_helper.rb
   }
@@ -55,6 +62,7 @@ Rammi=/home/zhiyi/railsDir/Rammi {
    city.rb
    dish.rb
    restaurant.rb
+   restaurant_category.rb
    concerns=concerns {
    }
   }
@@ -82,12 +90,25 @@ Rammi=/home/zhiyi/railsDir/Rammi {
    }
    restaurants=restaurants {
     _form.html.erb
+    _restaurant_card.html.erb
+    edit.html.erb
+    index.html.erb
+    index.js.erb
+    index.json.jbuilder
+    new.html.erb
+    show.html.erb
+    show.json.jbuilder
+    _restaurant_card.html.erb~
+   }
+   restaurant_categories=restaurant_categories {
+    _form.html.erb
     edit.html.erb
     index.html.erb
     index.json.jbuilder
     new.html.erb
     show.html.erb
     show.json.jbuilder
+    index.html.erb~
    }
    welcome=welcome {
     index.html.erb
@@ -131,6 +152,8 @@ Rammi=/home/zhiyi/railsDir/Rammi {
    20131016144418_create_cities.rb
    20131016145402_create_restaurants.rb
    20131016150544_create_dishes.rb
+   20131024141433_create_restaurant_categories.rb
+   20131024142415_create_restaurant_categories_restaurants.rb
   }
  }
  lib=lib {
@@ -155,18 +178,21 @@ Rammi=/home/zhiyi/railsDir/Rammi {
    cities_controller_test.rb
    dishes_controller_test.rb
    login_controller_test.rb
+   restaurant_categories_controller_test.rb
    restaurants_controller_test.rb
    welcome_controller_test.rb
   }
   fixtures=fixtures {
    cities.yml
    dishes.yml
+   restaurant_categories.yml
    restaurants.yml
   }
   helpers=helpers {
    cities_helper_test.rb
    dishes_helper_test.rb
    login_helper_test.rb
+   restaurant_categories_helper_test.rb
    restaurants_helper_test.rb
    welcome_helper_test.rb
   }
@@ -177,6 +203,7 @@ Rammi=/home/zhiyi/railsDir/Rammi {
   models=models {
    city_test.rb
    dish_test.rb
+   restaurant_category_test.rb
    restaurant_test.rb
   }
  }
@@ -189,12 +216,15 @@ Rammi=/home/zhiyi/railsDir/Rammi {
        cities.css.scssc
        dishes.css.scssc
        login.css.scssc
+       restaurant_categories.css.scssc
        restaurants.css.scssc
        scaffolds.css.scssc
        welcome.css.scssc
       }
      }
      sprockets=sprockets {
+      068fd6ae104d82f8b7a0b0b0089b38f8
+      06acb093fe33152a5cc94a7ae2e9b656
       07418ab9f19996d5242a77ee88b6066c
       0880abdae953b5df184845d8ab6f2944
       1018bfd249acdbae1df14a09fb45c8df
@@ -210,6 +240,8 @@ Rammi=/home/zhiyi/railsDir/Rammi {
       3233432f81669b9bd10ef726c526d348
       357970feca3ac29060c1e3861e2c0953
       35cf16f774880021ae6eaac72c949fe0
+      43cd4ec591c93f3975549cebf31e5bfd
+      4715dcf6fa6ed658e4bc643702fe8de8
       4bf1ae5d2f8fa8cc344e0a31079428ef
       4daff1d5b8e6da6d2ed55886db193ef2
       4ea33e825e6e38bd22dccab488a0255b
@@ -219,14 +251,19 @@ Rammi=/home/zhiyi/railsDir/Rammi {
       5bf1de9c32959370c282e727d1c7fdb3
       667cc9143034d978037aa947e795429a
       67fc0b5e8ca98f7dcc2b7132f7e16c97
+      6af28ef2770e0114b24f157a57c6c534
+      79ef7c3bc4ea12bc7e2b076d01259947
       7aeaea268eda9e3fa6eee8b9489a1358
       7be9086c960bb4384c9d23a52e489f29
+      7cfa59cf4b4451f30ab66ed97177e788
       86f909bf5baee50515afadaa3ce2df8f
+      896f97d2a1f9dc4e9a26aa5ffddc39ab
       8a52e446ba8c876915d0e8698b0dbcc1
       8e5a9738e9bc15478e026d98335454f9
       8f8936f164170e095c5ca2d0c2ae6127
       93708cb34051f3000884905e8669d74a
       9b7a43e5ea18a62cfde4e8d49c7af7b8
+      9f424fffc9eea1c5d93145065ba0ce75
       a995a3b95e4a7b0e5b9fa7c49efd6b74
       aaf3adeb8254396f969d99455f7f4511
       b02fbe6c41cf237d06152d09b4ba21e3
@@ -236,6 +273,8 @@ Rammi=/home/zhiyi/railsDir/Rammi {
       bd3936370d0f952ada5774e2230046ed
       bd71546009ab5e606b3f27b4c6a79856
       c30a6d3b62f806e0185173f247952ba8
+      c71555ce964e32ba763ef3ce229696bd
+      cbfdf6a59d87626d276653e092f1d82f
       cdeeaff308779e7f38378d947c35865c
       cffd775d018f68ce5dba1ee0d951a994
       d2be27ffc343a357643dd252d7379efb
@@ -251,6 +290,8 @@ Rammi=/home/zhiyi/railsDir/Rammi {
       f644fd75cbead0e58c847aa16546e2a8
       f7a0b90045f0637e5fb277fb03334778
       f7cbd26ba1d28d48de824f0e94586655
+      fb86e03b64b4fa1a9ee49e4a90c95427
+      fed5e8958df4515a4b36d5c7aa4d877b
       ffd7643b7c429e23bdb2281097a5e096
      }
     }
@@ -267,6 +308,7 @@ Rammi=/home/zhiyi/railsDir/Rammi {
  vendor=vendor {
   assets=assets {
    javascripts=javascripts {
+    jquery.infinitescroll.js
    }
    stylesheets=stylesheets {
    }

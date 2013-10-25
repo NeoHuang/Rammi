@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant_category.name %>
-</p>
+<div id="restaurants">
 
-<p>
-  <strong>Description:</strong>
-  <%= @restaurant_category.description %>
-</p>
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/categories">Categories</a></li>
+    <li class="active"><%=@restaurant_category.name %></li>
+  </ol>
+  <div class="page">
+    <% @restaurants.each do |restaurant| %>
+      <%= render 'restaurants/restaurant_card', :restaurant => restaurant %>
+          <% end %>
+  </div>
+  <br>
 
-<%= link_to 'Edit', edit_restaurant_category_path(@restaurant_category) %> |
-<%= link_to 'Back', restaurant_categories_path %>
+</div>
