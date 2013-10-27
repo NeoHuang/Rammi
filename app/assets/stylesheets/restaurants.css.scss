@@ -28,14 +28,13 @@ a.detail:hover
 a.rst-label {
   margin: 5px;
   margin-top: 10px;
-  padding: 3px;
+  padding: 4px;
   color: rgb(62, 109, 142);
   background-color: rgb(224, 234, 241);
   text-decoration: none;
   float: left;
-  font-size: 90%;
-  border-bottom: 1px solid rgb(178, 206, 225);
-  border-right: 1px solid rgb(178, 206, 225);
+  font-size: 70%;
+  border: 1px solid rgb(178, 206, 225);
 }
 a.rst-label:hover {
   color: rgb(25, 109, 142);
