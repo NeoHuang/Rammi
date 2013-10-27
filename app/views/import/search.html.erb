@@ -1,0 +1,47 @@
+<div id="search">
+	<ol class="breadcrumb">
+		<li><a href="/">Home</a></li>
+		<li class="active">Restaurants</li>
+		<li class="active">Import</li>
+	</ol>
+  
+
+	<div class="page">
+		<%= render 'form' %>
+	</div>
+	
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>Street</th>
+	    <th>Zip-Code</th>
+	    <th>Categroy</th>
+	    <th>Result</th>
+	  </tr>
+  			<% @restaurants.each do |restaurant| %>
+		  <tr>
+
+		    <td><%= restaurant.name %></td>
+		    <td><%= restaurant.street %></td>
+		    <td><%= restaurant.zip_code %></td>
+		    <td><%= restaurant.description %></td>
+  			<td>
+  				<%if restaurant.errors.any? %>
+				    <div>
+				      <% restaurant.errors.full_messages.each do |msg| %>
+				       failed:	<%= msg %>
+				      <% end %>
+				    </div>
+				<% else %>
+					<div>
+				      success
+				    </div>
+  				<% end %>
+  				
+			</td>
+		  </tr>
+			<% end %>
+	</table>
+	
+</div>
+

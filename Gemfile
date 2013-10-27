@@ -46,3 +46,6 @@ end
 
 # for paginator
 gem 'kaminari'
+
+# simple form 
+gem "simple_form"

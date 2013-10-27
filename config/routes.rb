@@ -11,6 +11,14 @@ Yammi::Application.routes.draw do
   get "welcome/index"
   get "categories" => "restaurant_categories#index"
   get "categories/:id(.:format)", to: "restaurant_categories#show", as: 'category'
+  
+  
+  get "import" => "import#index"
+  
+  
+  get '/:controller/:action'
+  post '/:controller/:action'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

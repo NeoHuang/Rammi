@@ -1,0 +1,27 @@
+<%= simple_form_for(:search, :url => '/import/search') do |f| %>
+
+	  <div class="field">
+	    <%= f.input :term, label: 'Term:', required: false, placeholder: 'bars' %>
+	  </div>
+	  <div class="field">
+	    <%= f.input :lat, label: 'Lat:' , required: false %>
+	  </div>
+	  <div class="field">
+	    <%= f.input :long, label: 'Long:', required: false %>
+	  </div>
+	  <div class="field">
+	    <%= f.input :location, label: 'Location:', required: false, placeholder: 'Berlin'  %>
+	  </div>
+	  <div class="field">
+	    <%= f.input :category, label: 'Category:', required: false, placeholder: 'Chinese'  %>
+	  </div>
+	  <div class="field">
+	    <%= f.input :radius, label: 'Radius:', required: false, placeholder: '25'  %>
+	  </div>
+	  <div class="field">
+	    <%= f.input :limit, label: 'Limit:', required: false, placeholder: '20'  %>
+	  </div>
+	  <div class="actions">
+	    <%= f.button :submit, 'search & import'%>
+	  </div>
+	<% end %>
