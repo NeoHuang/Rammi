@@ -1,5 +1,39 @@
 <body>
-    <div style=" height:1000px; font-size:24px;">welcome</div>
-    <div id="page_tag_bottom" style=" width:100%; position:fixed; top:0px; background-color:#cccccc;height:100px;"></div>
-    <div id="page_tag_load" style=" display:none; font-size:14px;position:fixed; bottom:0px; background-color:#cccccc;height:50px;">loading</div>
+<p style="height:200px"/>
+<div class="box" >
+<!-- trigger element. a regular workable link -->
+<a class="download" style="float:left; margin:100px 150px 200px 0;align:center">check</a>
+
+<!-- tooltip element -->
+<div class="tooltip">
+
+<img src="/assets/jiong.jpg" alt="jiong"
+style="float:left; margin:0 15px 20px 0;width:60px;height:80px" />
+
+<table style="margin:0">
+<tr>
+<td class="label"></td>
+<td>so....</td>
+</tr>
+<tr>
+<td class="label"></td>
+<td>you want an image</td>
+</tr>
+<tr>
+<td class="label"></td>
+<td>and some texts</td>
+</tr>
+<tr>
+<td class="label"></td>
+<td>is this what you wanted?</td>
+</tr>
+</table>
+
+</div>
+
 </body>
+<script>
+$(document).ready(function() {
+    $(".download").tooltip({ effect: 'slide'});
+});
+</script>
