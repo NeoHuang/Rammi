@@ -1,8 +1,15 @@
-      <%= render 'restaurant_card', :restaurant => @restaurant %>
-<% @menus.each do |menu| %>
-  <div>
-  <%= menu.name %> 
-  </div>
-<% end %>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%= render 'restaurant_card', :restaurant => @restaurant %>
+
+<div class="ymenu_container">
+  <ul>
+
+    <% @menus.each do |menu| %>
+      <li class="ymenu">
+      <div class="ymenu_title"><%= menu.name %></div>
+
+    </li>
+  <% end %>
+  </ul>
+</div>
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+  <%= link_to 'Back', restaurants_path %>
