@@ -11,6 +11,8 @@ Yammi::Application.routes.draw do
 
   resources :cities
 
+  resources :sessions
+
   root :to => "welcome#index"
   get "welcome/index"
   get "categories" => "restaurant_categories#index"
