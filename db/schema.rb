@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131108133957) do
+ActiveRecord::Schema.define(version: 20131108184529) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -72,5 +72,23 @@ ActiveRecord::Schema.define(version: 20131108133957) do
   end
 
   add_index "restaurants", ["city_id"], name: "index_restaurants_on_city_id"
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.string   "email"
+    t.boolean  "registered"
+    t.string   "activation_key"
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "street"
+    t.integer  "city_id"
+    t.integer  "zip"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["city_id"], name: "index_users_on_city_id"
 
 end
