@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024142415) do
+ActiveRecord::Schema.define(version: 20131108133957) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -32,9 +32,17 @@ ActiveRecord::Schema.define(version: 20131024142415) do
     t.text     "meta"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "menu_id"
   end
 
   add_index "dishes", ["restaurant_id"], name: "index_dishes_on_restaurant_id"
+
+  create_table "menus", force: true do |t|
+    t.string   "name"
+    t.integer  "restaurant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "restaurant_categories", force: true do |t|
     t.string   "name"

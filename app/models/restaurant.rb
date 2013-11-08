@@ -1,6 +1,7 @@
 class Restaurant < ActiveRecord::Base
   belongs_to :city
   has_many :dishes
+  has_many :menus
   has_and_belongs_to_many :restaurant_categories
   
   validates_presence_of :name, :street, :zip_code
